@@ -1,0 +1,13 @@
+2:Pivot.Size1SmallEmpty
+3:Pivot.Size1LargeEmpty
+4:Pivot.Size2SmallLarge
+5:Pivot.Size2LargeSmall
+6:Pivot.Size3LargeSmallLarge
+7:Pivot.Size3SmallLargeSmall
+8:Pivot.Size3LargeLargeSmall
+9:Pivot.Size6SmallThenLarge
+10:Pivot.Size6LargeThenSmall
+11:Pivot.Nominal
+12:Pivot.SameValues
+13:Pivot.NoCopySameNodeCheck
+23:Filter.CompareWithLlrec

@@ -1,0 +1,407 @@
+Start testing: Feb 16 20:26 UTC
+----------------------------------------------------------
+1/23 Testing: Pivot.Empty
+1/23 Test: Pivot.Empty
+Command: "/usr/bin/valgrind" "--tool=memcheck" "--leak-check=yes" "--trace-children=no" "--error-exitcode=113" "/home/codio/workspace/hw3/hw3_tests/llrec_tests/llrec_tests" "--gtest_filter=Pivot.Empty"
+Directory: /home/codio/workspace/hw3/hw3_tests/llrec_tests
+"Pivot.Empty" start time: Feb 16 20:26 UTC
+Output:
+----------------------------------------------------------
+==900== Memcheck, a memory error detector
+==900== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
+==900== Using Valgrind-3.13.0 and LibVEX; rerun with -h for copyright info
+==900== Command: /home/codio/workspace/hw3/hw3_tests/llrec_tests/llrec_tests --gtest_filter=Pivot.Empty
+==900== 
+Running main() from /home/codio/googletest/googletest/src/gtest_main.cc
+Note: Google Test filter = Pivot.Empty
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from Pivot
+[ RUN      ] Pivot.Empty
+[       OK ] Pivot.Empty (19 ms)
+[----------] 1 test from Pivot (28 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (82 ms total)
+[  PASSED  ] 1 test.
+==900== 
+==900== HEAP SUMMARY:
+==900==     in use at exit: 0 bytes in 0 blocks
+==900==   total heap usage: 404 allocs, 404 frees, 133,083 bytes allocated
+==900== 
+==900== All heap blocks were freed -- no leaks are possible
+==900== 
+==900== For counts of detected and suppressed errors, rerun with: -v
+==900== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)
+<end of output>
+Test time =   1.46 sec
+----------------------------------------------------------
+Test Passed.
+"Pivot.Empty" end time: Feb 16 20:26 UTC
+"Pivot.Empty" time elapsed: 00:00:01
+----------------------------------------------------------
+
+2/23 Testing: Pivot.Size1SmallEmpty
+2/23 Test: Pivot.Size1SmallEmpty
+Command: "/usr/bin/valgrind" "--tool=memcheck" "--leak-check=yes" "--trace-children=no" "--error-exitcode=113" "/home/codio/workspace/hw3/hw3_tests/llrec_tests/llrec_tests" "--gtest_filter=Pivot.Size1SmallEmpty"
+Directory: /home/codio/workspace/hw3/hw3_tests/llrec_tests
+"Pivot.Size1SmallEmpty" start time: Feb 16 20:26 UTC
+Output:
+----------------------------------------------------------
+==901== Memcheck, a memory error detector
+==901== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
+==901== Using Valgrind-3.13.0 and LibVEX; rerun with -h for copyright info
+==901== Command: /home/codio/workspace/hw3/hw3_tests/llrec_tests/llrec_tests --gtest_filter=Pivot.Size1SmallEmpty
+==901== 
+Running main() from /home/codio/googletest/googletest/src/gtest_main.cc
+Note: Google Test filter = Pivot.Size1SmallEmpty
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from Pivot
+[ RUN      ] Pivot.Size1SmallEmpty
+==901== Invalid read of size 8
+==901==    at 0x11BC52: llpivot(Node*&, Node*&, Node*&, int) (llrec.cpp:9)
+==901==    by 0x11BD07: llpivot(Node*&, Node*&, Node*&, int) (llrec.cpp:20)
+==901==    by 0x10D731: Pivot_Size1SmallEmpty_Test::TestBody() (llrec_tests.cpp:73)
+==901==    by 0x5109FD2: void testing::internal::HandleSehExceptionsInMethodIfSupported<testing::Test, void>(testing::Test*, void (testing::Test::*)(), char const*) (in /usr/lib/x86_64-linux-gnu/libgtest.so.1.11.0)
+==901==    by 0x5103038: void testing::internal::HandleExceptionsInMethodIfSupported<testing::Test, void>(testing::Test*, void (testing::Test::*)(), char const*) (in /usr/lib/x86_64-linux-gnu/libgtest.so.1.11.0)
+==901==    by 0x50E00DD: testing::Test::Run() (in /usr/lib/x86_64-linux-gnu/libgtest.so.1.11.0)
+==901==    by 0x50E0AF0: testing::TestInfo::Run() (in /usr/lib/x86_64-linux-gnu/libgtest.so.1.11.0)
+==901==    by 0x50E13EA: testing::TestSuite::Run() (in /usr/lib/x86_64-linux-gnu/libgtest.so.1.11.0)
+==901==    by 0x50F085A: testing::internal::UnitTestImpl::RunAllTests() (in /usr/lib/x86_64-linux-gnu/libgtest.so.1.11.0)
+==901==    by 0x510B1F2: bool testing::internal::HandleSehExceptionsInMethodIfSupported<testing::internal::UnitTestImpl, bool>(testing::internal::UnitTestImpl*, bool (testing::internal::UnitTestImpl::*)(), char const*) (in /usr/lib/x86_64-linux-gnu/libgtest.so.1.11.0)
+==901==    by 0x5103FBC: bool testing::internal::HandleExceptionsInMethodIfSupported<testing::internal::UnitTestImpl, bool>(testing::internal::UnitTestImpl*, bool (testing::internal::UnitTestImpl::*)(), char const*) (in /usr/lib/x86_64-linux-gnu/libgtest.so.1.11.0)
+==901==    by 0x50EEF2E: testing::UnitTest::Run() (in /usr/lib/x86_64-linux-gnu/libgtest.so.1.11.0)
+==901==  Address 0xa is not stack'd, malloc'd or (recently) free'd
+==901== 
+==901== 
+==901== Process terminating with default action of signal 11 (SIGSEGV)
+==901==  Access not within mapped region at address 0xA
+==901==    at 0x11BC52: llpivot(Node*&, Node*&, Node*&, int) (llrec.cpp:9)
+==901==    by 0x11BD07: llpivot(Node*&, Node*&, Node*&, int) (llrec.cpp:20)
+==901==    by 0x10D731: Pivot_Size1SmallEmpty_Test::TestBody() (llrec_tests.cpp:73)
+==901==    by 0x5109FD2: void testing::internal::HandleSehExceptionsInMethodIfSupported<testing::Test, void>(testing::Test*, void (testing::Test::*)(), char const*) (in /usr/lib/x86_64-linux-gnu/libgtest.so.1.11.0)
+==901==    by 0x5103038: void testing::internal::HandleExceptionsInMethodIfSupported<testing::Test, void>(testing::Test*, void (testing::Test::*)(), char const*) (in /usr/lib/x86_64-linux-gnu/libgtest.so.1.11.0)
+==901==    by 0x50E00DD: testing::Test::Run() (in /usr/lib/x86_64-linux-gnu/libgtest.so.1.11.0)
+==901==    by 0x50E0AF0: testing::TestInfo::Run() (in /usr/lib/x86_64-linux-gnu/libgtest.so.1.11.0)
+==901==    by 0x50E13EA: testing::TestSuite::Run() (in /usr/lib/x86_64-linux-gnu/libgtest.so.1.11.0)
+==901==    by 0x50F085A: testing::internal::UnitTestImpl::RunAllTests() (in /usr/lib/x86_64-linux-gnu/libgtest.so.1.11.0)
+==901==    by 0x510B1F2: bool testing::internal::HandleSehExceptionsInMethodIfSupported<testing::internal::UnitTestImpl, bool>(testing::internal::UnitTestImpl*, bool (testing::internal::UnitTestImpl::*)(), char const*) (in /usr/lib/x86_64-linux-gnu/libgtest.so.1.11.0)
+==901==    by 0x5103FBC: bool testing::internal::HandleExceptionsInMethodIfSupported<testing::internal::UnitTestImpl, bool>(testing::internal::UnitTestImpl*, bool (testing::internal::UnitTestImpl::*)(), char const*) (in /usr/lib/x86_64-linux-gnu/libgtest.so.1.11.0)
+==901==    by 0x50EEF2E: testing::UnitTest::Run() (in /usr/lib/x86_64-linux-gnu/libgtest.so.1.11.0)
+==901==  If you believe this happened as a result of a stack
+==901==  overflow in your program's main thread (unlikely but
+==901==  possible), you can try to increase the size of the
+==901==  main thread stack using the --main-stacksize= flag.
+==901==  The main thread stack size used in this run was 8388608.
+==901== 
+==901== HEAP SUMMARY:
+==901==     in use at exit: 10,338 bytes in 101 blocks
+==901==   total heap usage: 405 allocs, 304 frees, 130,580 bytes allocated
+==901== 
+==901== 16 bytes in 1 blocks are definitely lost in loss record 33 of 100
+==901==    at 0x4C3017F: operator new(unsigned long) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==901==    by 0x11ADE6: makeList(std::vector<int, std::allocator<int> > const&) (llrec_test_utils.cpp:16)
+==901==    by 0x10D6D1: Pivot_Size1SmallEmpty_Test::TestBody() (llrec_tests.cpp:70)
+==901==    by 0x5109FD2: void testing::internal::HandleSehExceptionsInMethodIfSupported<testing::Test, void>(testing::Test*, void (testing::Test::*)(), char const*) (in /usr/lib/x86_64-linux-gnu/libgtest.so.1.11.0)
+==901==    by 0x5103038: void testing::internal::HandleExceptionsInMethodIfSupported<testing::Test, void>(testing::Test*, void (testing::Test::*)(), char const*) (in /usr/lib/x86_64-linux-gnu/libgtest.so.1.11.0)
+==901==    by 0x50E00DD: testing::Test::Run() (in /usr/lib/x86_64-linux-gnu/libgtest.so.1.11.0)
+==901==    by 0x50E0AF0: testing::TestInfo::Run() (in /usr/lib/x86_64-linux-gnu/libgtest.so.1.11.0)
+==901==    by 0x50E13EA: testing::TestSuite::Run() (in /usr/lib/x86_64-linux-gnu/libgtest.so.1.11.0)
+==901==    by 0x50F085A: testing::internal::UnitTestImpl::RunAllTests() (in /usr/lib/x86_64-linux-gnu/libgtest.so.1.11.0)
+==901==    by 0x510B1F2: bool testing::internal::HandleSehExceptionsInMethodIfSupported<testing::internal::UnitTestImpl, bool>(testing::internal::UnitTestImpl*, bool (testing::internal::UnitTestImpl::*)(), char const*) (in /usr/lib/x86_64-linux-gnu/libgtest.so.1.11.0)
+==901==    by 0x5103FBC: bool testing::internal::HandleExceptionsInMethodIfSupported<testing::internal::UnitTestImpl, bool>(testing::internal::UnitTestImpl*, bool (testing::internal::UnitTestImpl::*)(), char const*) (in /usr/lib/x86_64-linux-gnu/libgtest.so.1.11.0)
+==901==    by 0x50EEF2E: testing::UnitTest::Run() (in /usr/lib/x86_64-linux-gnu/libgtest.so.1.11.0)
+==901== 
+==901== LEAK SUMMARY:
+==901==    definitely lost: 16 bytes in 1 blocks
+==901==    indirectly lost: 0 bytes in 0 blocks
+==901==      possibly lost: 0 bytes in 0 blocks
+==901==    still reachable: 10,322 bytes in 100 blocks
+==901==         suppressed: 0 bytes in 0 blocks
+==901== Reachable blocks (those to which a pointer was found) are not shown.
+==901== To see them, rerun with: --leak-check=full --show-leak-kinds=all
+==901== 
+==901== For counts of detected and suppressed errors, rerun with: -v
+==901== ERROR SUMMARY: 2 errors from 2 contexts (suppressed: 0 from 0)
+<end of output>
+Test time =   1.48 sec
+----------------------------------------------------------
+Test Failed.
+"Pivot.Size1SmallEmpty" end time: Feb 16 20:26 UTC
+"Pivot.Size1SmallEmpty" time elapsed: 00:00:01
+----------------------------------------------------------
+
+3/23 Testing: Pivot.Size1LargeEmpty
+3/23 Test: Pivot.Size1LargeEmpty
+Command: "/usr/bin/valgrind" "--tool=memcheck" "--leak-check=yes" "--trace-children=no" "--error-exitcode=113" "/home/codio/workspace/hw3/hw3_tests/llrec_tests/llrec_tests" "--gtest_filter=Pivot.Size1LargeEmpty"
+Directory: /home/codio/workspace/hw3/hw3_tests/llrec_tests
+"Pivot.Size1LargeEmpty" start time: Feb 16 20:26 UTC
+Output:
+----------------------------------------------------------
+==902== Memcheck, a memory error detector
+==902== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
+==902== Using Valgrind-3.13.0 and LibVEX; rerun with -h for copyright info
+==902== Command: /home/codio/workspace/hw3/hw3_tests/llrec_tests/llrec_tests --gtest_filter=Pivot.Size1LargeEmpty
+==902== 
+Running main() from /home/codio/googletest/googletest/src/gtest_main.cc
+Note: Google Test filter = Pivot.Size1LargeEmpty
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from Pivot
+[ RUN      ] Pivot.Size1LargeEmpty
+==902== Invalid read of size 8
+==902==    at 0x11BC52: llpivot(Node*&, Node*&, Node*&, int) (llrec.cpp:9)
+==902==    by 0x11BCBB: llpivot(Node*&, Node*&, Node*&, int) (llrec.cpp:16)
+==902==    by 0x10DD23: Pivot_Size1LargeEmpty_Test::TestBody() (llrec_tests.cpp:88)
+==902==    by 0x5109FD2: void testing::internal::HandleSehExceptionsInMethodIfSupported<testing::Test, void>(testing::Test*, void (testing::Test::*)(), char const*) (in /usr/lib/x86_64-linux-gnu/libgtest.so.1.11.0)
+==902==    by 0x5103038: void testing::internal::HandleExceptionsInMethodIfSupported<testing::Test, void>(testing::Test*, void (testing::Test::*)(), char const*) (in /usr/lib/x86_64-linux-gnu/libgtest.so.1.11.0)
+==902==    by 0x50E00DD: testing::Test::Run() (in /usr/lib/x86_64-linux-gnu/libgtest.so.1.11.0)
+==902==    by 0x50E0AF0: testing::TestInfo::Run() (in /usr/lib/x86_64-linux-gnu/libgtest.so.1.11.0)
+==902==    by 0x50E13EA: testing::TestSuite::Run() (in /usr/lib/x86_64-linux-gnu/libgtest.so.1.11.0)
+==902==    by 0x50F085A: testing::internal::UnitTestImpl::RunAllTests() (in /usr/lib/x86_64-linux-gnu/libgtest.so.1.11.0)
+==902==    by 0x510B1F2: bool testing::internal::HandleSehExceptionsInMethodIfSupported<testing::internal::UnitTestImpl, bool>(testing::internal::UnitTestImpl*, bool (testing::internal::UnitTestImpl::*)(), char const*) (in /usr/lib/x86_64-linux-gnu/libgtest.so.1.11.0)
+==902==    by 0x5103FBC: bool testing::internal::HandleExceptionsInMethodIfSupported<testing::internal::UnitTestImpl, bool>(testing::internal::UnitTestImpl*, bool (testing::internal::UnitTestImpl::*)(), char const*) (in /usr/lib/x86_64-linux-gnu/libgtest.so.1.11.0)
+==902==    by 0x50EEF2E: testing::UnitTest::Run() (in /usr/lib/x86_64-linux-gnu/libgtest.so.1.11.0)
+==902==  Address 0xa is not stack'd, malloc'd or (recently) free'd
+==902== 
+==902== 
+==902== Process terminating with default action of signal 11 (SIGSEGV)
+==902==  Access not within mapped region at address 0xA
+==902==    at 0x11BC52: llpivot(Node*&, Node*&, Node*&, int) (llrec.cpp:9)
+==902==    by 0x11BCBB: llpivot(Node*&, Node*&, Node*&, int) (llrec.cpp:16)
+==902==    by 0x10DD23: Pivot_Size1LargeEmpty_Test::TestBody() (llrec_tests.cpp:88)
+==902==    by 0x5109FD2: void testing::internal::HandleSehExceptionsInMethodIfSupported<testing::Test, void>(testing::Test*, void (testing::Test::*)(), char const*) (in /usr/lib/x86_64-linux-gnu/libgtest.so.1.11.0)
+==902==    by 0x5103038: void testing::internal::HandleExceptionsInMethodIfSupported<testing::Test, void>(testing::Test*, void (testing::Test::*)(), char const*) (in /usr/lib/x86_64-linux-gnu/libgtest.so.1.11.0)
+==902==    by 0x50E00DD: testing::Test::Run() (in /usr/lib/x86_64-linux-gnu/libgtest.so.1.11.0)
+==902==    by 0x50E0AF0: testing::TestInfo::Run() (in /usr/lib/x86_64-linux-gnu/libgtest.so.1.11.0)
+==902==    by 0x50E13EA: testing::TestSuite::Run() (in /usr/lib/x86_64-linux-gnu/libgtest.so.1.11.0)
+==902==    by 0x50F085A: testing::internal::UnitTestImpl::RunAllTests() (in /usr/lib/x86_64-linux-gnu/libgtest.so.1.11.0)
+==902==    by 0x510B1F2: bool testing::internal::HandleSehExceptionsInMethodIfSupported<testing::internal::UnitTestImpl, bool>(testing::internal::UnitTestImpl*, bool (testing::internal::UnitTestImpl::*)(), char const*) (in /usr/lib/x86_64-linux-gnu/libgtest.so.1.11.0)
+==902==    by 0x5103FBC: bool testing::internal::HandleExceptionsInMethodIfSupported<testing::internal::UnitTestImpl, bool>(testing::internal::UnitTestImpl*, bool (testing::internal::UnitTestImpl::*)(), char const*) (in /usr/lib/x86_64-linux-gnu/libgtest.so.1.11.0)
+==902==    by 0x50EEF2E: testing::UnitTest::Run() (in /usr/lib/x86_64-linux-gnu/libgtest.so.1.11.0)
+==902==  If you believe this happened as a result of a stack
+==902==  overflow in your program's main thread (unlikely but
+==902==  possible), you can try to increase the size of the
+==902==  main thread stack using the --main-stacksize= flag.
+==902==  The main thread stack size used in this run was 8388608.
+==902== 
+==902== HEAP SUMMARY:
+==902==     in use at exit: 10,338 bytes in 101 blocks
+==902==   total heap usage: 405 allocs, 304 frees, 130,580 bytes allocated
+==902== 
+==902== 16 bytes in 1 blocks are definitely lost in loss record 33 of 100
+==902==    at 0x4C3017F: operator new(unsigned long) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==902==    by 0x11ADE6: makeList(std::vector<int, std::allocator<int> > const&) (llrec_test_utils.cpp:16)
+==902==    by 0x10DCC3: Pivot_Size1LargeEmpty_Test::TestBody() (llrec_tests.cpp:85)
+==902==    by 0x5109FD2: void testing::internal::HandleSehExceptionsInMethodIfSupported<testing::Test, void>(testing::Test*, void (testing::Test::*)(), char const*) (in /usr/lib/x86_64-linux-gnu/libgtest.so.1.11.0)
+==902==    by 0x5103038: void testing::internal::HandleExceptionsInMethodIfSupported<testing::Test, void>(testing::Test*, void (testing::Test::*)(), char const*) (in /usr/lib/x86_64-linux-gnu/libgtest.so.1.11.0)
+==902==    by 0x50E00DD: testing::Test::Run() (in /usr/lib/x86_64-linux-gnu/libgtest.so.1.11.0)
+==902==    by 0x50E0AF0: testing::TestInfo::Run() (in /usr/lib/x86_64-linux-gnu/libgtest.so.1.11.0)
+==902==    by 0x50E13EA: testing::TestSuite::Run() (in /usr/lib/x86_64-linux-gnu/libgtest.so.1.11.0)
+==902==    by 0x50F085A: testing::internal::UnitTestImpl::RunAllTests() (in /usr/lib/x86_64-linux-gnu/libgtest.so.1.11.0)
+==902==    by 0x510B1F2: bool testing::internal::HandleSehExceptionsInMethodIfSupported<testing::internal::UnitTestImpl, bool>(testing::internal::UnitTestImpl*, bool (testing::internal::UnitTestImpl::*)(), char const*) (in /usr/lib/x86_64-linux-gnu/libgtest.so.1.11.0)
+==902==    by 0x5103FBC: bool testing::internal::HandleExceptionsInMethodIfSupported<testing::internal::UnitTestImpl, bool>(testing::internal::UnitTestImpl*, bool (testing::internal::UnitTestImpl::*)(), char const*) (in /usr/lib/x86_64-linux-gnu/libgtest.so.1.11.0)
+==902==    by 0x50EEF2E: testing::UnitTest::Run() (in /usr/lib/x86_64-linux-gnu/libgtest.so.1.11.0)
+==902== 
+==902== LEAK SUMMARY:
+==902==    definitely lost: 16 bytes in 1 blocks
+==902==    indirectly lost: 0 bytes in 0 blocks
+==902==      possibly lost: 0 bytes in 0 blocks
+==902==    still reachable: 10,322 bytes in 100 blocks
+==902==         suppressed: 0 bytes in 0 blocks
+==902== Reachable blocks (those to which a pointer was found) are not shown.
+==902== To see them, rerun with: --leak-check=full --show-leak-kinds=all
+==902== 
+==902== For counts of detected and suppressed errors, rerun with: -v
+==902== ERROR SUMMARY: 2 errors from 2 contexts (suppressed: 0 from 0)
+<end of output>
+Test time =   1.49 sec
+----------------------------------------------------------
+Test Failed.
+"Pivot.Size1LargeEmpty" end time: Feb 16 20:26 UTC
+"Pivot.Size1LargeEmpty" time elapsed: 00:00:01
+----------------------------------------------------------
+
+4/23 Testing: Pivot.Size2SmallLarge
+4/23 Test: Pivot.Size2SmallLarge
+Command: "/usr/bin/valgrind" "--tool=memcheck" "--leak-check=yes" "--trace-children=no" "--error-exitcode=113" "/home/codio/workspace/hw3/hw3_tests/llrec_tests/llrec_tests" "--gtest_filter=Pivot.Size2SmallLarge"
+Directory: /home/codio/workspace/hw3/hw3_tests/llrec_tests
+"Pivot.Size2SmallLarge" start time: Feb 16 20:26 UTC
+Output:
+----------------------------------------------------------
+==903== Memcheck, a memory error detector
+==903== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
+==903== Using Valgrind-3.13.0 and LibVEX; rerun with -h for copyright info
+==903== Command: /home/codio/workspace/hw3/hw3_tests/llrec_tests/llrec_tests --gtest_filter=Pivot.Size2SmallLarge
+==903== 
+Running main() from /home/codio/googletest/googletest/src/gtest_main.cc
+Note: Google Test filter = Pivot.Size2SmallLarge
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from Pivot
+[ RUN      ] Pivot.Size2SmallLarge
+==903== Invalid read of size 8
+==903==    at 0x11BC52: llpivot(Node*&, Node*&, Node*&, int) (llrec.cpp:9)
+==903==    by 0x11BCBB: llpivot(Node*&, Node*&, Node*&, int) (llrec.cpp:16)
+==903==    by 0x10E329: Pivot_Size2SmallLarge_Test::TestBody() (llrec_tests.cpp:103)
+==903==    by 0x5109FD2: void testing::internal::HandleSehExceptionsInMethodIfSupported<testing::Test, void>(testing::Test*, void (testing::Test::*)(), char const*) (in /usr/lib/x86_64-linux-gnu/libgtest.so.1.11.0)
+==903==    by 0x5103038: void testing::internal::HandleExceptionsInMethodIfSupported<testing::Test, void>(testing::Test*, void (testing::Test::*)(), char const*) (in /usr/lib/x86_64-linux-gnu/libgtest.so.1.11.0)
+==903==    by 0x50E00DD: testing::Test::Run() (in /usr/lib/x86_64-linux-gnu/libgtest.so.1.11.0)
+==903==    by 0x50E0AF0: testing::TestInfo::Run() (in /usr/lib/x86_64-linux-gnu/libgtest.so.1.11.0)
+==903==    by 0x50E13EA: testing::TestSuite::Run() (in /usr/lib/x86_64-linux-gnu/libgtest.so.1.11.0)
+==903==    by 0x50F085A: testing::internal::UnitTestImpl::RunAllTests() (in /usr/lib/x86_64-linux-gnu/libgtest.so.1.11.0)
+==903==    by 0x510B1F2: bool testing::internal::HandleSehExceptionsInMethodIfSupported<testing::internal::UnitTestImpl, bool>(testing::internal::UnitTestImpl*, bool (testing::internal::UnitTestImpl::*)(), char const*) (in /usr/lib/x86_64-linux-gnu/libgtest.so.1.11.0)
+==903==    by 0x5103FBC: bool testing::internal::HandleExceptionsInMethodIfSupported<testing::internal::UnitTestImpl, bool>(testing::internal::UnitTestImpl*, bool (testing::internal::UnitTestImpl::*)(), char const*) (in /usr/lib/x86_64-linux-gnu/libgtest.so.1.11.0)
+==903==    by 0x50EEF2E: testing::UnitTest::Run() (in /usr/lib/x86_64-linux-gnu/libgtest.so.1.11.0)
+==903==  Address 0xa is not stack'd, malloc'd or (recently) free'd
+==903== 
+==903== 
+==903== Process terminating with default action of signal 11 (SIGSEGV)
+==903==  Access not within mapped region at address 0xA
+==903==    at 0x11BC52: llpivot(Node*&, Node*&, Node*&, int) (llrec.cpp:9)
+==903==    by 0x11BCBB: llpivot(Node*&, Node*&, Node*&, int) (llrec.cpp:16)
+==903==    by 0x10E329: Pivot_Size2SmallLarge_Test::TestBody() (llrec_tests.cpp:103)
+==903==    by 0x5109FD2: void testing::internal::HandleSehExceptionsInMethodIfSupported<testing::Test, void>(testing::Test*, void (testing::Test::*)(), char const*) (in /usr/lib/x86_64-linux-gnu/libgtest.so.1.11.0)
+==903==    by 0x5103038: void testing::internal::HandleExceptionsInMethodIfSupported<testing::Test, void>(testing::Test*, void (testing::Test::*)(), char const*) (in /usr/lib/x86_64-linux-gnu/libgtest.so.1.11.0)
+==903==    by 0x50E00DD: testing::Test::Run() (in /usr/lib/x86_64-linux-gnu/libgtest.so.1.11.0)
+==903==    by 0x50E0AF0: testing::TestInfo::Run() (in /usr/lib/x86_64-linux-gnu/libgtest.so.1.11.0)
+==903==    by 0x50E13EA: testing::TestSuite::Run() (in /usr/lib/x86_64-linux-gnu/libgtest.so.1.11.0)
+==903==    by 0x50F085A: testing::internal::UnitTestImpl::RunAllTests() (in /usr/lib/x86_64-linux-gnu/libgtest.so.1.11.0)
+==903==    by 0x510B1F2: bool testing::internal::HandleSehExceptionsInMethodIfSupported<testing::internal::UnitTestImpl, bool>(testing::internal::UnitTestImpl*, bool (testing::internal::UnitTestImpl::*)(), char const*) (in /usr/lib/x86_64-linux-gnu/libgtest.so.1.11.0)
+==903==    by 0x5103FBC: bool testing::internal::HandleExceptionsInMethodIfSupported<testing::internal::UnitTestImpl, bool>(testing::internal::UnitTestImpl*, bool (testing::internal::UnitTestImpl::*)(), char const*) (in /usr/lib/x86_64-linux-gnu/libgtest.so.1.11.0)
+==903==    by 0x50EEF2E: testing::UnitTest::Run() (in /usr/lib/x86_64-linux-gnu/libgtest.so.1.11.0)
+==903==  If you believe this happened as a result of a stack
+==903==  overflow in your program's main thread (unlikely but
+==903==  possible), you can try to increase the size of the
+==903==  main thread stack using the --main-stacksize= flag.
+==903==  The main thread stack size used in this run was 8388608.
+==903== 
+==903== HEAP SUMMARY:
+==903==     in use at exit: 10,354 bytes in 102 blocks
+==903==   total heap usage: 406 allocs, 304 frees, 130,600 bytes allocated
+==903== 
+==903== 32 (16 direct, 16 indirect) bytes in 1 blocks are definitely lost in loss record 43 of 101
+==903==    at 0x4C3017F: operator new(unsigned long) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==903==    by 0x11ADE6: makeList(std::vector<int, std::allocator<int> > const&) (llrec_test_utils.cpp:16)
+==903==    by 0x10E2C9: Pivot_Size2SmallLarge_Test::TestBody() (llrec_tests.cpp:100)
+==903==    by 0x5109FD2: void testing::internal::HandleSehExceptionsInMethodIfSupported<testing::Test, void>(testing::Test*, void (testing::Test::*)(), char const*) (in /usr/lib/x86_64-linux-gnu/libgtest.so.1.11.0)
+==903==    by 0x5103038: void testing::internal::HandleExceptionsInMethodIfSupported<testing::Test, void>(testing::Test*, void (testing::Test::*)(), char const*) (in /usr/lib/x86_64-linux-gnu/libgtest.so.1.11.0)
+==903==    by 0x50E00DD: testing::Test::Run() (in /usr/lib/x86_64-linux-gnu/libgtest.so.1.11.0)
+==903==    by 0x50E0AF0: testing::TestInfo::Run() (in /usr/lib/x86_64-linux-gnu/libgtest.so.1.11.0)
+==903==    by 0x50E13EA: testing::TestSuite::Run() (in /usr/lib/x86_64-linux-gnu/libgtest.so.1.11.0)
+==903==    by 0x50F085A: testing::internal::UnitTestImpl::RunAllTests() (in /usr/lib/x86_64-linux-gnu/libgtest.so.1.11.0)
+==903==    by 0x510B1F2: bool testing::internal::HandleSehExceptionsInMethodIfSupported<testing::internal::UnitTestImpl, bool>(testing::internal::UnitTestImpl*, bool (testing::internal::UnitTestImpl::*)(), char const*) (in /usr/lib/x86_64-linux-gnu/libgtest.so.1.11.0)
+==903==    by 0x5103FBC: bool testing::internal::HandleExceptionsInMethodIfSupported<testing::internal::UnitTestImpl, bool>(testing::internal::UnitTestImpl*, bool (testing::internal::UnitTestImpl::*)(), char const*) (in /usr/lib/x86_64-linux-gnu/libgtest.so.1.11.0)
+==903==    by 0x50EEF2E: testing::UnitTest::Run() (in /usr/lib/x86_64-linux-gnu/libgtest.so.1.11.0)
+==903== 
+==903== LEAK SUMMARY:
+==903==    definitely lost: 16 bytes in 1 blocks
+==903==    indirectly lost: 16 bytes in 1 blocks
+==903==      possibly lost: 0 bytes in 0 blocks
+==903==    still reachable: 10,322 bytes in 100 blocks
+==903==         suppressed: 0 bytes in 0 blocks
+==903== Reachable blocks (those to which a pointer was found) are not shown.
+==903== To see them, rerun with: --leak-check=full --show-leak-kinds=all
+==903== 
+==903== For counts of detected and suppressed errors, rerun with: -v
+==903== ERROR SUMMARY: 2 errors from 2 contexts (suppressed: 0 from 0)
+<end of output>
+Test time =   1.47 sec
+----------------------------------------------------------
+Test Failed.
+"Pivot.Size2SmallLarge" end time: Feb 16 20:26 UTC
+"Pivot.Size2SmallLarge" time elapsed: 00:00:01
+----------------------------------------------------------
+
+5/23 Testing: Pivot.Size2LargeSmall
+5/23 Test: Pivot.Size2LargeSmall
+Command: "/usr/bin/valgrind" "--tool=memcheck" "--leak-check=yes" "--trace-children=no" "--error-exitcode=113" "/home/codio/workspace/hw3/hw3_tests/llrec_tests/llrec_tests" "--gtest_filter=Pivot.Size2LargeSmall"
+Directory: /home/codio/workspace/hw3/hw3_tests/llrec_tests
+"Pivot.Size2LargeSmall" start time: Feb 16 20:26 UTC
+Output:
+----------------------------------------------------------
+==904== Memcheck, a memory error detector
+==904== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
+==904== Using Valgrind-3.13.0 and LibVEX; rerun with -h for copyright info
+==904== Command: /home/codio/workspace/hw3/hw3_tests/llrec_tests/llrec_tests --gtest_filter=Pivot.Size2LargeSmall
+==904== 
+Running main() from /home/codio/googletest/googletest/src/gtest_main.cc
+Note: Google Test filter = Pivot.Size2LargeSmall
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from Pivot
+[ RUN      ] Pivot.Size2LargeSmall
+==904== Invalid read of size 8
+==904==    at 0x11BC52: llpivot(Node*&, Node*&, Node*&, int) (llrec.cpp:9)
+==904==    by 0x11BD07: llpivot(Node*&, Node*&, Node*&, int) (llrec.cpp:20)
+==904==    by 0x10E98B: Pivot_Size2LargeSmall_Test::TestBody() (llrec_tests.cpp:118)
+==904==    by 0x5109FD2: void testing::internal::HandleSehExceptionsInMethodIfSupported<testing::Test, void>(testing::Test*, void (testing::Test::*)(), char const*) (in /usr/lib/x86_64-linux-gnu/libgtest.so.1.11.0)
+==904==    by 0x5103038: void testing::internal::HandleExceptionsInMethodIfSupported<testing::Test, void>(testing::Test*, void (testing::Test::*)(), char const*) (in /usr/lib/x86_64-linux-gnu/libgtest.so.1.11.0)
+==904==    by 0x50E00DD: testing::Test::Run() (in /usr/lib/x86_64-linux-gnu/libgtest.so.1.11.0)
+==904==    by 0x50E0AF0: testing::TestInfo::Run() (in /usr/lib/x86_64-linux-gnu/libgtest.so.1.11.0)
+==904==    by 0x50E13EA: testing::TestSuite::Run() (in /usr/lib/x86_64-linux-gnu/libgtest.so.1.11.0)
+==904==    by 0x50F085A: testing::internal::UnitTestImpl::RunAllTests() (in /usr/lib/x86_64-linux-gnu/libgtest.so.1.11.0)
+==904==    by 0x510B1F2: bool testing::internal::HandleSehExceptionsInMethodIfSupported<testing::internal::UnitTestImpl, bool>(testing::internal::UnitTestImpl*, bool (testing::internal::UnitTestImpl::*)(), char const*) (in /usr/lib/x86_64-linux-gnu/libgtest.so.1.11.0)
+==904==    by 0x5103FBC: bool testing::internal::HandleExceptionsInMethodIfSupported<testing::internal::UnitTestImpl, bool>(testing::internal::UnitTestImpl*, bool (testing::internal::UnitTestImpl::*)(), char const*) (in /usr/lib/x86_64-linux-gnu/libgtest.so.1.11.0)
+==904==    by 0x50EEF2E: testing::UnitTest::Run() (in /usr/lib/x86_64-linux-gnu/libgtest.so.1.11.0)
+==904==  Address 0xc is not stack'd, malloc'd or (recently) free'd
+==904== 
+==904== 
+==904== Process terminating with default action of signal 11 (SIGSEGV)
+==904==  Access not within mapped region at address 0xC
+==904==    at 0x11BC52: llpivot(Node*&, Node*&, Node*&, int) (llrec.cpp:9)
+==904==    by 0x11BD07: llpivot(Node*&, Node*&, Node*&, int) (llrec.cpp:20)
+==904==    by 0x10E98B: Pivot_Size2LargeSmall_Test::TestBody() (llrec_tests.cpp:118)
+==904==    by 0x5109FD2: void testing::internal::HandleSehExceptionsInMethodIfSupported<testing::Test, void>(testing::Test*, void (testing::Test::*)(), char const*) (in /usr/lib/x86_64-linux-gnu/libgtest.so.1.11.0)
+==904==    by 0x5103038: void testing::internal::HandleExceptionsInMethodIfSupported<testing::Test, void>(testing::Test*, void (testing::Test::*)(), char const*) (in /usr/lib/x86_64-linux-gnu/libgtest.so.1.11.0)
+==904==    by 0x50E00DD: testing::Test::Run() (in /usr/lib/x86_64-linux-gnu/libgtest.so.1.11.0)
+==904==    by 0x50E0AF0: testing::TestInfo::Run() (in /usr/lib/x86_64-linux-gnu/libgtest.so.1.11.0)
+==904==    by 0x50E13EA: testing::TestSuite::Run() (in /usr/lib/x86_64-linux-gnu/libgtest.so.1.11.0)
+==904==    by 0x50F085A: testing::internal::UnitTestImpl::RunAllTests() (in /usr/lib/x86_64-linux-gnu/libgtest.so.1.11.0)
+==904==    by 0x510B1F2: bool testing::internal::HandleSehExceptionsInMethodIfSupported<testing::internal::UnitTestImpl, bool>(testing::internal::UnitTestImpl*, bool (testing::internal::UnitTestImpl::*)(), char const*) (in /usr/lib/x86_64-linux-gnu/libgtest.so.1.11.0)
+==904==    by 0x5103FBC: bool testing::internal::HandleExceptionsInMethodIfSupported<testing::internal::UnitTestImpl, bool>(testing::internal::UnitTestImpl*, bool (testing::internal::UnitTestImpl::*)(), char const*) (in /usr/lib/x86_64-linux-gnu/libgtest.so.1.11.0)
+==904==    by 0x50EEF2E: testing::UnitTest::Run() (in /usr/lib/x86_64-linux-gnu/libgtest.so.1.11.0)
+==904==  If you believe this happened as a result of a stack
+==904==  overflow in your program's main thread (unlikely but
+==904==  possible), you can try to increase the size of the
+==904==  main thread stack using the --main-stacksize= flag.
+==904==  The main thread stack size used in this run was 8388608.
+==904== 
+==904== HEAP SUMMARY:
+==904==     in use at exit: 10,354 bytes in 102 blocks
+==904==   total heap usage: 406 allocs, 304 frees, 130,600 bytes allocated
+==904== 
+==904== 32 (16 direct, 16 indirect) bytes in 1 blocks are definitely lost in loss record 43 of 101
+==904==    at 0x4C3017F: operator new(unsigned long) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==904==    by 0x11ADE6: makeList(std::vector<int, std::allocator<int> > const&) (llrec_test_utils.cpp:16)
+==904==    by 0x10E92B: Pivot_Size2LargeSmall_Test::TestBody() (llrec_tests.cpp:115)
+==904==    by 0x5109FD2: void testing::internal::HandleSehExceptionsInMethodIfSupported<testing::Test, void>(testing::Test*, void (testing::Test::*)(), char const*) (in /usr/lib/x86_64-linux-gnu/libgtest.so.1.11.0)
+==904==    by 0x5103038: void testing::internal::HandleExceptionsInMethodIfSupported<testing::Test, void>(testing::Test*, void (testing::Test::*)(), char const*) (in /usr/lib/x86_64-linux-gnu/libgtest.so.1.11.0)
+==904==    by 0x50E00DD: testing::Test::Run() (in /usr/lib/x86_64-linux-gnu/libgtest.so.1.11.0)
+==904==    by 0x50E0AF0: testing::TestInfo::Run() (in /usr/lib/x86_64-linux-gnu/libgtest.so.1.11.0)
+==904==    by 0x50E13EA: testing::TestSuite::Run() (in /usr/lib/x86_64-linux-gnu/libgtest.so.1.11.0)
+==904==    by 0x50F085A: testing::internal::UnitTestImpl::RunAllTests() (in /usr/lib/x86_64-linux-gnu/libgtest.so.1.11.0)
+==904==    by 0x510B1F2: bool testing::internal::HandleSehExceptionsInMethodIfSupported<testing::internal::UnitTestImpl, bool>(testing::internal::UnitTestImpl*, bool (testing::internal::UnitTestImpl::*)(), char const*) (in /usr/lib/x86_64-linux-gnu/libgtest.so.1.11.0)
+==904==    by 0x5103FBC: bool testing::internal::HandleExceptionsInMethodIfSupported<testing::internal::UnitTestImpl, bool>(testing::internal::UnitTestImpl*, bool (testing::internal::UnitTestImpl::*)(), char const*) (in /usr/lib/x86_64-linux-gnu/libgtest.so.1.11.0)
+==904==    by 0x50EEF2E: testing::UnitTest::Run() (in /usr/lib/x86_64-linux-gnu/libgtest.so.1.11.0)
+==904== 
+==904== LEAK SUMMARY:
+==904==    definitely lost: 16 bytes in 1 blocks
+==904==    indirectly lost: 16 bytes in 1 blocks
+==904==      possibly lost: 0 bytes in 0 blocks
+==904==    still reachable: 10,322 bytes in 100 blocks
+==904==         suppressed: 0 bytes in 0 blocks
+==904== Reachable blocks (those to which a pointer was found) are not shown.
+==904== To see them, rerun with: --leak-check=full --show-leak-kinds=all
+==904== 
+==904== For counts of detected and suppressed errors, rerun with: -v
+==904== ERROR SUMMARY: 2 errors from 2 contexts (suppressed: 0 from 0)
+<end of output>
+Test time =   1.49 sec
+----------------------------------------------------------
+Test Failed.
+"Pivot.Size2LargeSmall" end time: Feb 16 20:26 UTC
+"Pivot.Size2LargeSmall" time elapsed: 00:00:01
+----------------------------------------------------------
+
