@@ -101,11 +101,9 @@ Event* NotGate::update(uint64_t current_time){
 		char in = w->getState();
 		if(in == '1'){
 			state = '0';
-			break;
 		}
 		else if(in == '0'){
 			state = '1';
-			break;
 		}
 		else if(in == 'X'){
 			state = 'X';
